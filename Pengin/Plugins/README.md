@@ -15,4 +15,5 @@ As state previously, all plugins must have the following endpoints implemented, 
 | ENDPOINT | PAYLOAD |  DESCRIPTION | RESPONSE |
 |----------|-------------|----------|
 |search=<NAME> | `NAME`: The name of the target title |Endpoint to search for a manga series by its title | `{'results': [{'Title':..., 'Author':..., 'Genres':[...], 'Cover Art':...}, 'Payload': ... {PAYLOAD}]}`
-|download| `PAYLOAD`: The json payload that was passed as response by the search endpoint 
+|fetch_data | `PAYLOAD`:The json payload that was passed as response by the search endpoint (Appended of the ID of the plugin which returned the data, so we can redirect if the user so chooses afterwards)|||
+|download| `PAYLOAD`: The json payload that was passed as response by the search endpoint (Appended o the links to the chapters the user wants to download )|||
