@@ -8,18 +8,19 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
 
-      <Router>
+    <Router>
+      <div className="App">
+
         <Navbar />
         <Routes>
-          <Route path="/" exact component={Home}></Route>
-          <Route path="/Queue" exact component={Queue}></Route>
-          <Route path="Settings" exact component={Settings}></Route>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/Queue" exact element={<Queue />} />
+          <Route path="/Settings" exact element={<Settings />} />
         </Routes>
-      </Router>
 
-    </div>
+      </div>
+    </Router>
   );
 }
 
