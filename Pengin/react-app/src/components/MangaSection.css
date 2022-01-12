@@ -1,0 +1,22 @@
+.MangaSection {
+  height: auto;
+  margin-top: 10vh;
+}
+
+.Divider {
+  display: flex;
+  flex-direction: column;
+}
+
+.DividerLine {
+  background-color: #343a40;
+  width: 25vw;
+  height: 0.1vh;
+}
+
+h3 {
+  padding-left: 10px;
+  margin-bottom: 0;
+  color: #343a40;
+  font-family: 'Open Sans', sans-serif;
+}
