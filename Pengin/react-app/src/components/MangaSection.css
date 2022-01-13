@@ -1,17 +1,32 @@
 .MangaSection {
   height: auto;
-  margin-top: 10vh;
+  margin-top: 14vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 80px;
 }
 
 .Divider {
   display: flex;
   flex-direction: column;
+  margin-right: auto;
 }
 
 .DividerLine {
   background-color: #343a40;
   width: 25vw;
   height: 0.1vh;
+}
+
+.Gallery {
+  width: 80vw;
+  display: grid;
+  /* grid-template-columns: repeat(auto-fill, minmax(250px, 15fr)); */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 15fr));
+  justify-items: center;
+  align-items: baseline;
+  gap: 0;
 }
 
 h3 {
