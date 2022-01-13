@@ -1,0 +1,43 @@
+.MangaThumbnail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: auto;
+  align-items: center;
+}
+
+.MangaThumbnail img {
+  height: 45vh;
+  border-radius: 10px;
+}
+
+.Label {
+  background-color: #f2b33d;
+  margin-right: auto;
+  border-radius: 15px;
+  width: auto;
+  max-width: 10vw;
+  max-height: 2.5vh;
+  padding: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: #343a40;
+  font-size: min(2vw, 2vh);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.Notification {
+  z-index: 10;
+  position: relative;
+  top: 2vh;
+  left: -0.5vw;
+  background-color: #f2b33d;
+  width: 3vh;
+  height: 3vh;
+  border-radius: 100%;
+}
