@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import Queue from "./pages/Queue";
+import Search from "./pages/Search";
 import Settings from "./pages/Settings";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -15,7 +15,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" exact element={<Home />} />
-          <Route path="/Queue" exact element={<Queue />} />
+          <Route path="/Search" exact element={<Search />} />
           <Route path="/Settings" exact element={<Settings />} />
         </Routes>
 
