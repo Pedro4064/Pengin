@@ -5,7 +5,7 @@ import './SearchBar.css'
 function SearchBar() {
 
     const [partialSearch, setPartialSearch] = useState('');
-    const [search, setSearch] = useState('');
+    const [search, setSearch] = useState(''); //TODO: We are actually going to pass the search as props so the parent component can re-render when changed
 
     return (
         <div className='SearchBar'>
