@@ -1,11 +1,20 @@
 import React from 'react'
 import SearchBar from '../components/SearchBar'
+import MangaSearch from '../components/MangaSearch'
+
+import './styles/Search.css'
 
 function Search() {
     return (
-        <div>
+        <div className='SearchPage'>
             <SearchBar />
-            potato
+            <div className='ResultsBox'>
+                <MangaSearch />
+                <MangaSearch />
+                <MangaSearch />
+                <MangaSearch />
+                <MangaSearch />
+            </div>
         </div>
     )
 }
