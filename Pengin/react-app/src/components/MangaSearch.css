@@ -4,8 +4,8 @@
   gap: 10px;
   /* width: 50vw; */
   max-width: 697px;
-  max-height: 200px;
-  height: 25vh;
+  max-height: 220px;
+  /* height: 25vh; */
 }
 
 .SearchResult img {
@@ -19,7 +19,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 25vh;
 
   outline: 4px solid #d97c2b;
   outline-offset: -5px;
@@ -35,7 +34,17 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.SummaryBox h3 {
+.SummaryBox .TitleBox {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: centero; */
+  align-items: baseline;
+  justify-content: space-between;
+  padding-right: 10px;
+  width: 90%;
+}
+
+.SummaryBox .TitleBox h3 {
   color: #343a40;
   font-family: 'Open Sans', sans-serif;
   font-size: large;
@@ -43,6 +52,17 @@
   font-style: bold;
   font-size: 18px;
   line-height: 21px;
+}
+
+.SummaryBox .TitleBox button {
+  border-style: none;
+  border-radius: 100%;
+  background-color: #d97c2b;
+  display: flex;
+  align-items: center;
+  color: #f2e7dc;
+  width: 25px;
+  height: 25px;
 }
 
 .TagBox {
