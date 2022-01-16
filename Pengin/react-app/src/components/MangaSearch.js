@@ -7,7 +7,7 @@ function MangaSearch() {
             <img src='https://uploads.mangadex.org/covers/195023bf-cf9a-4772-94ef-09dd6eddea84/61eaa1da-050f-43b7-a8bb-5126a77aac7d.jpg.512.jpg'></img>
             <div className='SummaryBox'>
 
-                <h3>Komi-SAn</h3>
+                <h3>Komi-San</h3>
 
                 <div className='TagBox'>
                     <div className='Tag'>Comedy</div>
