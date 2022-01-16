@@ -1,0 +1,18 @@
+.SearchPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 10px;
+  padding-top: 45px;
+  gap: 50px;
+}
+
+.ResultsBox {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  /* justify-items: center; */
+  /* align-items: baseline; */
+  gap: 25px;
+  padding: 10px;
+}
