@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BiSearch } from 'react-icons/bi'
+import search_manga from '../api/mangadex'
 import './SearchBar.css'
 
-function SearchBar() {
+function SearchBar({ search, setSearch }) {
 
     const [partialSearch, setPartialSearch] = useState('');
-    const [search, setSearch] = useState(''); //TODO: We are actually going to pass the search as props so the parent component can re-render when changed
 
     return (
         <div className='SearchBar'>
