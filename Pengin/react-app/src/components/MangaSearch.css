@@ -84,7 +84,8 @@
 }
 
 .Summary {
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   flex: 0.8;
   overflow: hidden !important;
   text-overflow: ellipsis;
