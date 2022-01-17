@@ -18,9 +18,7 @@ function Search() {
         <div className='SearchPage'>
             <SearchBar search={search} setSearch={setSearch} />
             <div className='ResultsBox'>
-                {/* {(searchResults.length != 0) ? console.log('OK:', searchResults.length, searchResults) : ''} */}
                 {(searchResults.length > 0) ? searchResults.map((result) => { return <MangaSearch key={result['ID']} manga_data={result} /> }) : 'NOPE'}
-                {/* {(searchResults.length != 0) ? console.log(searchResults) : 'foda'} */}
             </div>
         </div>
     )
