@@ -1,14 +1,12 @@
-async function search_manga(manga_title) {
-    const BASE_URL = `https://api.mangadex.org/manga?title=${manga_title}&limit=20`;
+export default async function search_manga(manga_title) {
+    const BASE_URL = `https://api.mangadex.org/manga?title=${manga_title}&limit=100`;
     const response = await fetch(BASE_URL);
     const response_json = await response.json();
 
     return Promise.all(response_json['data'].map(parse_data));
 }
 
-export default search_manga
-
-async function parse_data(api_response) {
+const parse_data = async (api_response) => {
     let manga_data = { Title: '', Id: '', Description: '', Status: '', Tags: [], CoverUrl: '' };
 
     manga_data.Title = api_response['attributes']['title']['en'];
@@ -21,7 +19,7 @@ async function parse_data(api_response) {
 
 }
 
-async function get_cover(api_relationships, manga_id) {
+const get_cover = async (api_relationships, manga_id) => {
 
     var cover_id = api_relationships.filter((relation) => { if (relation['type'] === 'cover_art') { return true } })[0]['id'];
     const BASE_URL = `https://api.mangadex.org/cover?ids[]=${cover_id}`
