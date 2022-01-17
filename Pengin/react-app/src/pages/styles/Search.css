@@ -16,3 +16,15 @@
   gap: 25px;
   padding: 10px;
 }
+
+#loading_logo {
+  display: flex;
+  flex-direction: column;
+
+  align-self: center;
+  justify-self: center;
+
+  align-content: center;
+  justify-content: center;
+  height: 50vh;
+}
