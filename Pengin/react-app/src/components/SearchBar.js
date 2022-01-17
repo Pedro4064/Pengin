@@ -19,7 +19,6 @@ function SearchBar({ search, setSearch }) {
                     <input name='Title' placeholder='Title...'></input>
                 </form>
             </div>
-            <h1>{search}</h1>
         </div>
     )
 }
