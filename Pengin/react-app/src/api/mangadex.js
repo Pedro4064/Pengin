@@ -13,9 +13,19 @@ const parse_data = async (api_response) => {
     manga_data.Id = api_response['id'];
     manga_data.Description = api_response['attributes']['description']['en'];
     manga_data.Status = api_response['attributes']['status'];
+    manga_data.Tags = get_tags(api_response['attributes']['tags']);
     manga_data.CoverUrl = await get_cover(api_response['relationships'], manga_data.Id);
+
     console.log(manga_data);
     return manga_data;
+
+}
+
+const get_tags = (tags_data) => {
+    let tags = [];
+    tags_data.map((tag) => { tags.push(tag['attributes']['name']['en']) });
+
+    return tags;
 
 }
 
