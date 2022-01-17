@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { Rings } from 'react-loader-spinner'
 import SearchBar from '../components/SearchBar'
 import MangaSearch from '../components/MangaSearch'
+import useSessionStorage from '../hooks/useSessionStorage'
 
 import search_manga from '../api/mangadex';
 import './styles/Search.css'
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 function Search() {
-    const [search, setSearch] = useState('');
+    const [search, setSearch] = useSessionStorage('searchItem', '');
     const [searchResults, setSearchResults] = useState([]);
     const [loading, setLoading] = useState(true);
 
