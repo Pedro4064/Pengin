@@ -7,14 +7,14 @@ export default async function search_manga(manga_title) {
 }
 
 const parse_data = async (api_response) => {
-    let manga_data = { Title: '', Id: '', Description: '', Status: '', Tags: [], CoverUrl: '' };
+    let manga_data = { Title: '', Id: '', Description: '', Status: '', Tags: [], CoverUrl: '', CoverLargeUrl: '' };
 
     manga_data.Title = api_response['attributes']['title']['en'];
     manga_data.Id = api_response['id'];
     manga_data.Description = api_response['attributes']['description']['en'];
     manga_data.Status = api_response['attributes']['status'];
     manga_data.Tags = get_tags(api_response['attributes']['tags']);
-    manga_data.CoverUrl = await get_cover(api_response['relationships'], manga_data.Id);
+    [manga_data.CoverUrl, manga_data.CoverLargeUrl] = await get_cover(api_response['relationships'], manga_data.Id);
 
     console.log(manga_data);
     return manga_data;
@@ -36,5 +36,5 @@ const get_cover = async (api_relationships, manga_id) => {
     const response = await fetch(BASE_URL);
     const response_json = await response.json()
     const cover_name = response_json['data'][0]['attributes']['fileName']
-    return `https://uploads.mangadex.org/covers/${manga_id}/${cover_name}.256.jpg`
+    return [`https://uploads.mangadex.org/covers/${manga_id}/${cover_name}.256.jpg`, `https://uploads.mangadex.org/covers/${manga_id}/${cover_name}`]
 }
