@@ -12,7 +12,7 @@
   height: 100%;
   display: flex;
   align-items: center;
-  padding-left: 50px;
+  padding-left: 15px;
 }
 
 .Navbar .Logo img {
@@ -26,7 +26,7 @@
   align-items: center;
   text-align: center;
   gap: 15px;
-  padding-right: 3%;
+  padding-right: 15px;
   justify-content: space-between;
 }
 
