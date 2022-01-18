@@ -4,11 +4,14 @@
   gap: 10px;
   height: auto;
   align-items: center;
+  padding: 10px;
+  border-radius: 25px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
 }
 
 .MangaThumbnail img {
   height: 40vh;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .Label {
@@ -36,8 +39,9 @@
   position: relative;
   top: 2vh;
   left: -0.5vw;
-  background-color: #f2b33d;
-  width: 3vh;
-  height: 3vh;
+  background-color: #d97c2b;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+  width: 3.5vh;
+  height: 3.5vh;
   border-radius: 100%;
 }
