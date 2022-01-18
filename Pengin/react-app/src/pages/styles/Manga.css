@@ -1,0 +1,24 @@
+.MangaPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+.BackgroundImage {
+  width: 100vw;
+  height: 25vh;
+  position: absolute;
+  top: 0px;
+}
+
+img {
+  width: 100vw;
+  position: absolute;
+  top: -500px;
+  object-fit: cover;
+  clip: rect(0px, auto, 800px, 0px);
+  filter: blur(4px) brightness(0.7) contrast(0.7);
+  z-index: -1;
+}

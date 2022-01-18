@@ -1,5 +1,6 @@
 import React from 'react'
 import { IoIosArrowForward } from 'react-icons/io'
+import { Link } from 'react-router-dom';
 import './MangaSearch.css'
 
 function MangaSearch({ manga_data }) {
@@ -23,7 +24,9 @@ function MangaSearch({ manga_data }) {
 
                 <div className='TitleBox'>
                     <h3>{manga_data['Title']}</h3>
-                    <button onClick={() => console.log('Check Manga Page')}> <IoIosArrowForward /> </button>
+                    <Link to='/Manga/1/2'>
+                        <button> <IoIosArrowForward /> </button>
+                    </Link>
                 </div>
 
                 <div className='TagBox'>
