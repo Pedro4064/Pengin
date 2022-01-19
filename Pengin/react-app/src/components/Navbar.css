@@ -5,6 +5,7 @@
   flex-direction: row;
 
   background-color: var(--main-bg-color);
+  z-index: 1;
 }
 
 .Navbar .Logo {
