@@ -24,7 +24,7 @@ function MangaSearch({ manga_data }) {
 
                 <div className='TitleBox'>
                     <h3>{manga_data['Title']}</h3>
-                    <Link to='/Manga/1/2'>
+                    <Link to={`/Manga/1/${manga_data['Id']}`}>
                         <button> <IoIosArrowForward /> </button>
                     </Link>
                 </div>
@@ -36,8 +36,8 @@ function MangaSearch({ manga_data }) {
                 <div className='Summary'>{manga_data['Description']}</div>
 
 
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }
 
