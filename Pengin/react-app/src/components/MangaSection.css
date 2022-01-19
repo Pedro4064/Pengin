@@ -23,7 +23,7 @@
   width: 80vw;
   display: grid;
   /* grid-template-columns: repeat(auto-fill, minmax(250px, 15fr)); */
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(25vh, 1fr));
   justify-items: center;
   align-items: baseline;
   column-gap: 35px;
