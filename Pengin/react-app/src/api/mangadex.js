@@ -8,8 +8,8 @@ export default async function search_manga(manga_title) {
 
 export async function get_manga_data(manga_id) {
     var manga_data = { 'Manga info': {}, 'Volumes Data': {} };
-    var data = get_overall_data(manga_id);
-    var volumes_data = get_volumes_data(manga_id);
+    var data = await get_overall_data(manga_id);
+    var volumes_data = await get_volumes_data(manga_id);
 
     Promise.all([data, volumes_data]);
     manga_data['Manga info'] = data;
@@ -44,7 +44,10 @@ const merge_volumes_covers_data = (manga_id, volumes_json, covers_json) => {
     volumes_json = volumes_json['volumes'];
     covers_json = covers_json['data'];
 
-    covers_json.map((entry) => { volumes_json[entry['attributes']['volume']]['CoverUrl'] = `https://uploads.mangadex.org/covers/${manga_id}/${entry['attributes']['fileName']}` })
+    //! WE NEED TO ADD A PLACEHOLDER COVER FOR THE CHAPTERS THAT DONT HAVE RATHER THAN FILTERING THEM
+    console.log('MERGING DATA', covers_json, volumes_json);
+    covers_json = covers_json.filter((entry) => { return entry['attributes']['volume'] != null });
+    covers_json.map((entry) => { volumes_json[entry['attributes']['volume']]['CoverUrl'] = `https://uploads.mangadex.org/covers/${manga_id}/${entry['attributes']['fileName']}` });
     return volumes_json;
 
 }
@@ -52,7 +55,7 @@ const merge_volumes_covers_data = (manga_id, volumes_json, covers_json) => {
 const parse_data = async (api_response) => {
     let manga_data = { Title: '', Id: '', Description: '', Status: '', Tags: [], CoverUrl: '', CoverLargeUrl: '' };
 
-    console.log('PARSING DATA', api_response);
+    // console.log('PARSING DATA', api_response);
     manga_data.Title = api_response['attributes']['title']['en'];
     manga_data.Id = api_response['id'];
     manga_data.Description = api_response['attributes']['description']['en'];
