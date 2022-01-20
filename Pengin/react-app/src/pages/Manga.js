@@ -58,12 +58,8 @@ function Manga() {
                 </div>
                 <div className='VolumeGallery'>
 
-                    {/* {mangaData['Volumes Data']} */}
-
-                    <MangaThumbnail cover_url='https://uploads.mangadex.org/covers/0c44cf39-3d6c-4472-815b-9e163613cfe9/5d0929ad-7ce8-4a0a-8d2b-785e310fb549.png.512.jpg' title='Komi-san' has_new={true} />
-                    <MangaThumbnail cover_url='https://uploads.mangadex.org/covers/0c44cf39-3d6c-4472-815b-9e163613cfe9/c374d778-0955-426e-9037-8756977ed80f.png.512.jpg' title='Komi-san' has_new={false} />
-                    <MangaThumbnail cover_url='https://uploads.mangadex.org/covers/0c44cf39-3d6c-4472-815b-9e163613cfe9/898edaaf-c407-49e7-865d-bc17b34beea7.png.512.jpg' title='Komi-san' has_new={false} />
-                    <MangaThumbnail cover_url='https://uploads.mangadex.org/covers/0c44cf39-3d6c-4472-815b-9e163613cfe9/1d308ddb-09bf-4c30-b845-a65bd444b6d4.png.512.jpg' title='Komi-san' has_new={false} />
+                    {Object.keys(mangaData['Volumes Data']).map((entry) => { return (<MangaThumbnail cover_url={mangaData['Volumes Data'][entry]['CoverUrl'] + '.256.jpg'} title='Komi-san' has_new={true} />) })}
+                    {/* {console.log('COVERS:', Object.keys(mangaData['Volumes Data']))} */}
 
                 </div>
             </div>
