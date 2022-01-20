@@ -1,5 +1,26 @@
+.Page {
+  display: flex;
+  flex-direction: column;
+  /* width: 90vw; */
+  gap: 5vh;
+}
+
+.Loading {
+  display: none;
+}
+#loading_logo {
+  display: flex;
+  flex-direction: column;
+
+  align-self: center;
+  justify-self: center;
+
+  align-content: center;
+  justify-content: center;
+  height: 50vh;
+}
 .BackgroundImage {
-  width: 100vw;
+  width: 100%;
   height: 50vh;
   position: absolute;
   overflow: hidden;
@@ -19,6 +40,8 @@
 
 .MangaInfo {
   padding: 30px;
+  padding-left: 60px;
+  padding-right: 45px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -93,4 +116,68 @@
 
 .MangaInfo .ActionButtons #AddReadingBtn:hover {
   background-color: rgba(217, 124, 43, 0.52);
+}
+
+.DividerLine {
+  background-color: #343a40;
+  /* align-self: baseline; */
+  /* justify-self: baseline; */
+  border-top: 10px;
+  width: 25vw;
+  height: 0.1vh;
+}
+
+.Page .MangaSummary {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  padding-left: 60px;
+  padding-right: 50px;
+
+  color: #343a40;
+  font-family: 'Open Sans', sans-serif;
+  font-size: small;
+}
+
+.Page .MangaSummary .TagGallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  flex: 100%;
+}
+
+.Page .MangaSummary .TagGallery .Tag {
+  width: 100px;
+  height: 25px;
+
+  background-color: #d97c2b;
+  border-radius: 10px;
+
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  color: var(--main-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5vh;
+}
+
+.VolumeGallery {
+  justify-self: center;
+  align-self: center;
+  width: 80vw;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 60px;
+  padding-right: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25vh, 1fr));
+  justify-items: center;
+  align-items: baseline;
+  column-gap: 35px;
+  row-gap: 10px;
 }
