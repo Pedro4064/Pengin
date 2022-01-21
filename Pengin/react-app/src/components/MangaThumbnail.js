@@ -10,7 +10,7 @@ function MangaThumbnail(props) {
             < div className='MangaThumbnail' >
 
                 <img src={props.cover_url}></img>
-                {/* <div className='Label'>{props.title}</div> */}
+                {props.show_title && <div className='Label'>{props.title}</div>}
 
             </div>
         </div >
