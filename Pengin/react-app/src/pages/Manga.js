@@ -58,7 +58,7 @@ function Manga() {
                 </div>
                 <div className='VolumeGallery'>
 
-                    {Object.keys(mangaData['Volumes Data']).map((entry) => { return (<MangaThumbnail cover_url={mangaData['Volumes Data'][entry]['CoverUrl'] + '.256.jpg'} title='Komi-san' has_new={true} />) })}
+                    {Object.keys(mangaData['Volumes Data']).map((entry) => { return (<MangaThumbnail cover_url={mangaData['Volumes Data'][entry]['CoverUrl'] + '.256.jpg'} title={(mangaData['Volumes Data'][entry]['volume'] != 'none') ? mangaData['Volumes Data'][entry]['volume'] : 'On Going'} show_title={true} has_new={false} />) })}
                     {/* {console.log('COVERS:', Object.keys(mangaData['Volumes Data']))} */}
 
                 </div>
