@@ -36,20 +36,24 @@ const get_volumes_data = async (manga_id) => {
     const BASE_COVERS_URL = `https://api.mangadex.org/cover?order[volume]=asc&manga[]=${manga_id}&limit=100`;
     const covers_response = await fetch(BASE_COVERS_URL);
     var covers_json = await covers_response.json();
+    var covers_object = parse_cover_data(covers_json);
 
-    return merge_volumes_covers_data(manga_id, volumes_json, covers_json);
+    return merge_volumes_covers_data(manga_id, volumes_json, covers_object);
 }
 
 const merge_volumes_covers_data = (manga_id, volumes_json, covers_json) => {
     volumes_json = volumes_json['volumes'];
-    covers_json = covers_json['data'];
 
-    //! WE NEED TO ADD A PLACEHOLDER COVER FOR THE CHAPTERS THAT DONT HAVE RATHER THAN FILTERING THEM
-    console.log('MERGING DATA', covers_json, volumes_json);
-    covers_json = covers_json.filter((entry) => { return entry['attributes']['volume'] != null });
-    covers_json.map((entry) => { volumes_json[entry['attributes']['volume']]['CoverUrl'] = `https://uploads.mangadex.org/covers/${manga_id}/${entry['attributes']['fileName']}` });
+    console.log(volumes_json, covers_json);
+    Object.keys(volumes_json).map((entry) => { volumes_json[entry]['CoverUrl'] = (covers_json[entry]) ? `https://uploads.mangadex.org/covers/${manga_id}/${covers_json[entry]}` : '' });
     return volumes_json;
 
+}
+
+const parse_cover_data = (raw_json) => {
+    var covers_object = {};
+    raw_json['data'].map((entry) => { covers_object[entry['attributes']['volume']] = entry['attributes']['fileName'] });
+    return covers_object;
 }
 
 const parse_data = async (api_response) => {
