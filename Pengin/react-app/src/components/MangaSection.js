@@ -12,7 +12,7 @@ function MangaSection({ section_name, mangas }) {
 
             <div className='Gallery'>
                 {console.log('DATA PASSED TO MANGA SECTION', mangas)}
-                {mangas.map((entry) => { return <MangaThumbnail cover_url={entry['CoverUrl']} title={entry['Title']} has_new={true} /> })}
+                {mangas.map((entry) => { return <MangaThumbnail cover_url={entry['CoverUrl']} title={entry['Title']} has_new={true} id={entry['Id']} /> })}
             </div>
 
         </div>
