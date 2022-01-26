@@ -6,6 +6,7 @@ import MangaThumbnail from '../components/MangaThumbnail';
 
 import './styles/Manga.css'
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import { add_manga_favorite } from '../api/pengin';
 
 function Manga() {
     const { pluginId, mangaId } = useParams();
@@ -38,7 +39,7 @@ function Manga() {
                         <h1>{mangaData['Manga info']['Title']}</h1>
                         <h2>Aono Nachi</h2>
                         <div className='ActionButtons'>
-                            <div id='AddReadingBtn' className='ActionBtn'>Add to Reading</div>
+                            <div id='AddReadingBtn' className='ActionBtn' onClick={() => add_manga_favorite(mangaData['Manga info']['Id'])}>Add to Reading</div>
                             <div id='AddFavoriteBtn' className='ActionBtn'>★</div>
                         </div>
                     </div>
