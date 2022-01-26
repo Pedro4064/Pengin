@@ -20,7 +20,7 @@ export async function get_manga_data(manga_id) {
 
 }
 
-const get_overall_data = async (manga_id) => {
+export async function get_overall_data(manga_id) {
     const BASE_URL = `https://api.mangadex.org/manga/${manga_id}`;
     const response = await fetch(BASE_URL);
     const response_json = await response.json();
